@@ -37,7 +37,7 @@ generatePlaylist = (guardians, songs) => {
 };
 
 displayPlaylist = (guardian) => {
-    const playlists = document.getElementById('playlists');
+    const playlistsDiv = document.getElementById('playlists');
 
     const guardianPlaylistsDiv = document.createElement('div');
     guardianPlaylistsDiv.classList.add('playlist');
@@ -46,7 +46,7 @@ displayPlaylist = (guardian) => {
     nameOfGuardian.textContent = `${guardian}'s Playlist`;
     guardianPlaylistsDiv.appendChild(nameOfGuardian);
 
-    playlists.appendChild(guardianPlaylistsDiv);
+    playlistsDiv.appendChild(guardianPlaylistsDiv);
 };
 
 // Call generatePlaylist and display the playlists for each Guardian
