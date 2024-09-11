@@ -36,7 +36,7 @@ generatePlaylist = (guardians, songs) => {
     });
 };
 
-displayPlaylist = (guardian) => {
+displayPlaylist = (guardian, playlist) => {
     const playlistsDiv = document.getElementById('playlists');
 
     const guardianPlaylistsDiv = document.createElement('div');
@@ -45,6 +45,17 @@ displayPlaylist = (guardian) => {
     const nameOfGuardian = document.createElement('h2');
     nameOfGuardian.textContent = `${guardian}'s Playlist`;
     guardianPlaylistsDiv.appendChild(nameOfGuardian);
+
+    playlist.map(song => {
+        const songDiv = document.createElement('div');
+        songDiv.classList.add('song');
+
+        const songTitle = document.createElement('p');
+        songTitle.classList.add('song-title');
+        songTitle.textContent = `${song.title} by ${song.artist}`;
+        songDiv.appendChild(songTitle);
+        guardianPlaylistsDiv.appendChild(songDiv);
+    });
 
     playlistsDiv.appendChild(guardianPlaylistsDiv);
 };
