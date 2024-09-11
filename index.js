@@ -36,5 +36,11 @@ generatePlaylist = (guardians, songs) => {
     });
 };
 
+displayPlaylist = (guardian) => {
+    const playlists = document.getElementById('playlists');
+    const playlistsDiv = document.createElement('div');
+    playlistsDiv.classList.add('playlist');
+};
+
 // Call generatePlaylist and display the playlists for each Guardian
 generatePlaylist(guardians, songs);
