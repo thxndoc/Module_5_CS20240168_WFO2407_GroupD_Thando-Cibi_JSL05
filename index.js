@@ -50,9 +50,15 @@ displayPlaylist = (guardian, playlist) => {
         const songDiv = document.createElement('div');
         songDiv.classList.add('song');
 
-        const songTitle = document.createElement('p');
-        songTitle.classList.add('song-title');
-        songTitle.textContent = `${song.title} by ${song.artist}`;
+        let songTitle = document.createElement('p');
+
+        const songTitleSpan = document.createElement('span');
+        songTitleSpan.classList.add('song-title');
+        songTitleSpan.textContent = `${song.title}`;
+        songTitle.appendChild(songTitleSpan);
+
+        const songArtist= document.createTextNode(` by ${song.artist}`);
+        songTitle.appendChild(songArtist);
         songDiv.appendChild(songTitle);
         guardianPlaylistsDiv.appendChild(songDiv);
     });
