@@ -32,7 +32,7 @@ generatePlaylist = (guardians, songs) => {
 
         const playlist = songs.filter(song => song.genre === guardians[guardian]);
 
-        displayPlaylist(guardian);
+        displayPlaylist(guardian, playlist);
     });
 };
 
